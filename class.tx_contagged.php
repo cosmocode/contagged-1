@@ -378,11 +378,13 @@ class tx_contagged extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
         $termsList = implode(',', $terms);
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
-        $connection->update(
-            'pages', // table
-            [$this->prefixId . '_keywords' => $termsList], // value array
-            [ 'uid' => $GLOBALS['TSFE']->id ] // where
-        );
+        $queryBuilder
+            ->update('pages')
+            ->where(
+                $queryBuilder->expr()->eq('uid', $GLOBALS['TSFE']->id)
+            )
+            ->set($this->prefixId . '_keywords', $termsList)
+            ->execute();
     }
 
     /**
