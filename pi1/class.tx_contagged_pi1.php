@@ -364,7 +364,7 @@ class tx_contagged_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
                 $imagesConf['image.']['altText'] = $imagesAltText[$key];
                 $imagesConf['image.']['titleText'] = $imagesTitleText[$key];
                 $caption = $imagesCaption[$key] != '' ? $this->local_cObj->stdWrap($imagesCaption[$key], $this->conf['images.']['caption.']['stdWrap.']) : '';
-                $imagesCode .= $this->local_cObj->IMAGE($imagesConf['image.']);
+                $imagesCode .= $this->local_cObj->cObjGetSingle('IMAGE', $imagesConf['image.']);
                 $imagesCode .= $caption;
             }
             return $this->local_cObj->stdWrap(trim($imagesCode), $this->conf['images.']['stdWrap.']);
