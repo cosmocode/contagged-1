@@ -1,4 +1,7 @@
 <?php
+
+use Ppi\Contagged\ItemsProcFunc;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:contagged/locallang_db.xml:tx_contagged_terms',
@@ -186,7 +189,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'itemsProcFunc' => \Extrameile\Contagged\ItemsProcFunc::class . '->user_addTermTypes',
+                'itemsProcFunc' => ItemsProcFunc::class . '->user_addTermTypes',
                 'size' => 1,
                 'maxitems' => 1,
                 'disableNoMatchingValueElement' => 1,
