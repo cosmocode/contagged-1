@@ -471,7 +471,7 @@ class tx_contagged_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
     protected function renderSearchBox(&$markerArray)
     {
         if ($this->conf['searchbox.']['enable'] > 0) {
-            $markerArray['###SEARCHBOX###'] = $this->pi_list_searchBox();
+            $markerArray['###SEARCHBOX###'] = 'Error: Method pi_list_searchBox() has been removed in TYPO3 Version 8.0. See https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/8.0/Breaking-72473-RemovedDeprecatedMiscellaneousFunctions.html?highlight=pi_list_searchbox'; // $this->pi_list_searchBox();
         } else {
             $markerArray['###SEARCHBOX###'] = '';
         }
