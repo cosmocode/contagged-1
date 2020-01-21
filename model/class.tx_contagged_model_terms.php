@@ -51,7 +51,7 @@ class tx_contagged_model_terms implements \TYPO3\CMS\Core\SingletonInterface
         $this->mapper = GeneralUtility::makeInstance('tx_contagged_model_mapper', $this->controller);
 
         // build an array of tables in the database
-        $this->tablesArray = $GLOBALS['TYPO3_DB']->admin_get_tables(TYPO3_db);
+        $this->tablesArray = $GLOBALS['TYPO3_DB']->admin_get_tables();
 
         if (is_array($this->conf['dataSources.'])) {
             foreach ($this->conf['dataSources.'] as $dataSource => $sourceConfiguration) {
