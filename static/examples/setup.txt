@@ -1,6 +1,3 @@
-# include class tx_contagged as library 
-includeLibs.tx_contagged = EXT:contagged/class.tx_contagged.php
-
 # invoke the parser
 lib.stdheader.stdWrap.postUserFunc = tx_contagged->main
 tt_content {
