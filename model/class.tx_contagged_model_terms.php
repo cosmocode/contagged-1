@@ -115,7 +115,7 @@ class tx_contagged_model_terms implements \TYPO3\CMS\Core\SingletonInterface
     public function findTermByUid($dataSource, $uid)
     {
         $additionalWhereClause = ' AND uid=' . intval($uid);
-        $terms = $this->fetchTermsFromSource($dataSource, $storagePidsArray, $additionalWhereClause);
+        $terms = $this->fetchTermsFromSource($dataSource, [], $additionalWhereClause);
         if ($this->conf["fetchRelatedTerms"] == 1) {
             $this->fetchRelatedTerms($terms);
         }
